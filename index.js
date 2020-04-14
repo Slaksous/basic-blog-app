@@ -20,7 +20,7 @@ db.on('error', error => console.error('Mongoose Error: ', error));
 db.once('open', () => console.log('Mongoose is connected!'));
 
 app.get('/', (req, res) => {
-    res.render('posts');
+    res.render('index');
 });
 
 app.use('/posts', postsRoute);
