@@ -1,12 +1,43 @@
-* {
+/* GLOBAL START */
+body {
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
 }
 
+body {
+    background-color: #f8f9fa;
+}
+
+/* NAVBAR */
+nav {
+    background-color: #563d7c;
+    min-height: 5rem;
+    font-family: 'Anton';
+}
+
+.navbar-brand i, .navbar-brand span {
+    color: #cbbde2;
+}
+
+.navbar-brand i:hover, .navbar-brand span:hover {
+    color: white;
+} 
+
+.nav-link {
+    color: #cbbde2;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+
+/* POSTS */
 .header-posts {
+    font-family: 'Anton';
     border: 1px solid #ccc;
-    background-color: #ccc;
+    background-color: #c9caca;
     text-align: center;
     padding: 2rem;
     margin: 1rem 0;
@@ -33,4 +64,20 @@
 
 .post-createAt {
     font-size: .8rem;
+}
+
+.btn-outline-purple {
+    border-color: #563d7c;
+    color: #563d7c;
+}
+
+.btn-outline-purple:hover {
+    background: #563d7c;
+    color: white;
+}
+
+/* POST */
+.post-text {
+    margin: 1rem 0;
+    resize: none;
 }

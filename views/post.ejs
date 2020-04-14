@@ -1,1 +1,18 @@
-Hello from Post
+<%- include('./partials/header') %> 
+
+<div class="container my-5">
+    <form action="/posts" method="POST">
+        <div class="form-group">
+          <label>Author</label>
+          <input type="text" class="form-control" name="author" autocomplete="off">
+          <small id="author" class="form-text text-muted">This is the name that will be displayed above post.</small>
+        </div>
+        <div class="form-group">
+          <label>Text</label>
+          <textarea class="form-control post-text" name="text" cols="30" rows="10" placeholder="Say something..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-purple">Create Post</button>
+      </form>
+</div>
+
+<%- include('./partials/footer') %>

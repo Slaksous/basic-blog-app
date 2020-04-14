@@ -2,15 +2,29 @@
 
 <div class="container" >
 
-    <h1 class="header-posts">POSTS</h1>
+    <h1 class="header-posts">P O S T S</h1>
+    
+    <% if(posts.length != 0) { %>
+        <% posts.forEach(post => { %>
+            <div class="post">
+                <h3 class="post-author"><%= post.author   %></h3>
+                <p class="lead post-text"><%=  post.text     %></p>
+                <p class="post-createAt"><%=  post.createAt.toDateString() %></p>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button class="btn btn-outline-purple"><i class="fas fa-thumbs-up"></i> Like</button>
+                        <button class="btn btn-outline-secondary"><i class="fas fa-thumbs-down"></i> Unlike</button>
+                    </div>
+                    <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-outline-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% }); %> 
+    <% } else { %>
+        <h3>Be the first to leave a post...</h3>
+   <% } %> 
 
-    <% posts.forEach(post => { %>
-        <div class="post">
-            <h3 class="post-author"><%= post.author   %></h3>
-            <p class="lead post-text"><%=  post.text     %></p>
-            <p class="post-createAt"><%=  post.createAt.toISOString().split('T')[0] %></p>
-        </div>
-    <% }); %> 
 
 </div>
 
