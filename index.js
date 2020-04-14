@@ -12,8 +12,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
 // DB Setup
-const uri = 'mongodb://localhost:27017/demo-blog-app';
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true});
+// const uri = 'mongodb://localhost:27017/demo-blog-app';
+// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on('error', error => console.error('Mongoose Error: ', error));
 db.once('open', () => console.log('Mongoose is connected!'));
@@ -24,7 +25,5 @@ app.get('/', (req, res) => {
 
 app.use('/posts', postsRoute);
 
-app.listen(3000, () => {
-    console.log('Server listening on port 3000...');
-});
+app.listen(process.env.PORT || 3000);
 
