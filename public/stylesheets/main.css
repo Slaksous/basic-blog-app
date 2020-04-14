@@ -81,3 +81,22 @@ nav {
     margin: 1rem 0;
     resize: none;
 }
+
+/* Landing */
+.landing {
+    position: relative;
+    background: url('../img/showcase.jpg') no-repeat center center/cover;
+    height: 100vh;
+}
+
+.landing-innner {
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
